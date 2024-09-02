@@ -1,0 +1,71 @@
+.calendar-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  
+  .days-of-week {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .day-button {
+    padding: 10px 20px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .day-button.active {
+    background-color: #A52A2A;
+    color: white;
+  }
+  
+  .day-button:hover {
+    background-color: #8B0000;
+    color: white;
+  }
+  
+  .time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .time-slot {
+    padding: 10px 15px;
+    margin: 10px;
+    background-color: #32CD32;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .time-slot.booked {
+    background-color: #FF6347;
+    cursor: not-allowed;
+  }
+  
+  .time-slot.available:hover {
+    background-color: #228B22;
+  }
+  
+  .day-info {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .day-info p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+  }
+  

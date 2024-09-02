@@ -1,38 +1,289 @@
-.App {
+/* Import Josefin Sans font */
+/* Import Josefin Sans font */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #F5F5DC; /* Beige background */
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Banner Styles */
+.banner {
+    width: 100%;
+    background-color: #8B0000; /* Dark red for the sale banner */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner p {
+    margin: 0;
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 10s linear infinite;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links ul li a {
+    font-weight: 400;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links ul li a:hover {
+    color: #A52A2A; /* Darker beige/brown for hover effect */
+}
+/* About Section Styles */
+.about {
+  padding: 60px 20px;
+  background-color: #F5F5DC; /* Beige background to match the theme */
+  color: #333;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.about h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.about p {
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: 'Josefin Sans', sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.about-btn {
+  display: inline-block;
+  background-color: #A52A2A;
   color: white;
+  padding: 10px 30px;
+  font-weight: 400;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  font-family: 'Josefin Sans', sans-serif;
+  text-decoration: none;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.about-btn:hover {
+  background-color: #8B0000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.about-page {
+  padding: 60px 20px;
+  background-color: #fff;
+  color: #333;
+  text-align: center;
+}
+
+.about-page h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.about-page p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: 'Josefin Sans', sans-serif;
+}
+/* Hero Section Styles */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 2;
+}
+
+.hero-content {
+    color: white;
+    position: relative;
+    z-index: 3;
+}
+
+.animated-title {
+    font-weight: 300;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Josefin Sans', sans-serif; /* Ensuring Josefin Sans for titles */
+}
+
+.hero-content p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #DDD;
+    font-family: 'Josefin Sans', sans-serif; /* Ensuring Josefin Sans for paragraphs */
+}
+
+.hero-content .btn {
+    background-color: #A52A2A;
+    color: white;
+    padding: 10px 30px;
+    font-weight: 400;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+    font-family: 'Josefin Sans', sans-serif; /* Ensuring Josefin Sans for buttons */
+}
+
+.hero-content .btn:hover {
+    background-color: #8B0000; /* Slightly darker for hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        margin: 5px;
+        background: #333;
+    }
+
+    .menu-toggle.active + .nav-links {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .animated-title {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-content .btn {
+        padding: 10px 20px;
+    }
+
+    @media (max-width: 768px) {
+      .about {
+          padding: 40px 10px;
+      }
+  
+      .about h2 {
+          font-size: 1.5rem;
+      }
+  
+      .about p {
+          font-size: 0.9rem;
+      }
   }
 }
