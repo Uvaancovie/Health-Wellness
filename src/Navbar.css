@@ -1,0 +1,52 @@
+/* Burger Menu Styles */
+.bm-burger-button {
+  position: relative;
+  width: 36px;
+  height: 30px;
+}
+
+.bm-burger-bars {
+  background: #333; /* Burger icon color */
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #000000; /* Close icon color */
+}
+
+.bm-menu-wrap {
+  top: 0;
+  height: 100%;
+}
+
+.bm-menu {
+  background: white;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.bm-item-list {
+  color: #333;
+  padding: 0.8em;
+}
+
+.menu-item {
+  display: block;
+  padding: 0.5em;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.menu-item:hover {
+  color: #A52A2A;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3); /* Overlay color when the menu is open */
+}

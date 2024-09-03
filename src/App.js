@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Navbar from './Navbar';  // Import the updated Navbar
 import BentoCard from './BentoCard';
 import Carousel from './Carousel';
 import Tabs from './Tabs';
 import PricingCard from './PricingCard';
 import ContactForm from './ContactForm';
 import CalendarComponent from './CalendarComponent';
+import Footer from './Footer';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 function Home() {
@@ -54,28 +56,6 @@ function Home() {
 
   return (
     <div className="App">
-      <div className="banner">
-        <p>Sale: £30 per season of 1 hour</p>
-      </div>
-      <header className="navbar">
-        <div className="logo">
-          ReformHer Pilates
-        </div>
-        <nav className="nav-links">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <div className="menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </header>
-
       <section className="hero" id="home">
         <div className="slideshow">
           {images.map((image, index) => (
@@ -95,6 +75,10 @@ function Home() {
           <a href="#services" className="btn">Get Started</a>
         </div>
       </section>
+
+      <div className="banner">
+        <p>Sale: £30 per season of 1 hour</p>
+      </div>
 
       <section className="about" id="about">
         <h2>About Zayna Shah</h2>
@@ -182,9 +166,13 @@ function Home() {
         <ContactForm />
         <CalendarComponent />
       </section>
+
+      <Footer />
     </div>
   );
 }
+
+// Page components
 
 function AboutPage() {
   return (
@@ -196,13 +184,50 @@ function AboutPage() {
   );
 }
 
+function PricingPage() {
+  return (
+    <div className="pricing-page">
+      <h1>Pricing</h1>
+      <p>Here are the pricing details for our Pilates classes.</p>
+      {/* Add your pricing details here */}
+    </div>
+  );
+}
+
+function ClassesPage() {
+  return (
+    <div className="classes-page">
+      <h1>Our Classes</h1>
+      <p>Explore the variety of Pilates classes we offer.</p>
+      {/* Add your class details here */}
+    </div>
+  );
+}
+
+function ContactPage() {
+  return (
+    <div className="contact-page">
+      <h1>Contact Us</h1>
+      <p>Get in touch with us for any inquiries or to schedule a class.</p>
+      {/* Add your contact form or details here */}
+    </div>
+  );
+}
+
+// Main App Component
+
 export default function App() {
   return (
     <Router>
+      <Navbar />  {/* Navbar is included here so it appears on all pages */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/classes" element={<ClassesPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
